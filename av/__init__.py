@@ -1,5 +1,16 @@
 # MUST import the core before anything else in order to initialize the underlying
 # library that is being wrapped.
+from pathlib import Path
+import shutil
+import os
+
+ffmpeg_path = shutil.which("ffmpeg")
+
+if ffmpeg_path is not None:
+    ffmpeg_dir = Path(ffmpeg_path).parent
+    os.add_dll_directory(str(ffmpeg_dir))
+
+
 from av._core import time_base, library_versions, ffmpeg_version_info
 
 # Capture logging (by importing it).

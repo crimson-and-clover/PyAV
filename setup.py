@@ -113,7 +113,7 @@ def parse_cflags(raw_flags):
 
 
 # Parse command-line arguments.
-FFMPEG_DIR = None
+FFMPEG_DIR = "C:\\usr\\local\\ffmpeg\\"
 for i, arg in enumerate(sys.argv):
     if arg.startswith("--ffmpeg-dir="):
         FFMPEG_DIR = arg.split("=")[1]
